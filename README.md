@@ -65,7 +65,7 @@ TKTK
 
 The IRS releases electronic filings as .xml files to a public amazon bucket, read more about it [here](https://docs.opendata.aws/irs-990/readme.html). This data was created by extracting values with a python library called [IRSx](https://github.com/jsfenfen/990-xml-reader) I wrote a few years ago and dumped into a [database](https://github.com/jsfenfen/990-xml-database). In general, the technical hurdle to using this data is that the xpaths to a given variable can change slightly between years; IRSx is intended to create a consistent name, whenever possible.
 
-The naming convention used by [IRSx is here](http://www.irsx.info/), but the original names have been altered to prevent confusion when two parties are present. The queries used to extract the data, which contain name transforms, are posted here. 
+The naming convention used by [IRSx is here](http://www.irsx.info/), but the original names have been altered to prevent confusion when two parties are present. 
 
 Each dataset above includes a link to documentation with the column names used.
 

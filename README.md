@@ -20,21 +20,28 @@ More details are available below, here are links for the impatient. All of these
 
 - [Insider_transactions.csv](http://www.jacobfenton.com/990data/NICAR20/insider_transactions.csv) Is a file of "grants or assistance benefitting interested persons" from Schedule L, Part III. About 178,000 rows. 
 
+- [Excess_benefits.csv](http://www.jacobfenton.com/990data/NICAR20/excess_benefits.csv) Is a file of "excess benefit transactions" with insiders, from Schedule L, Part I. Very rarely used, total of about 450 rows. Documentation [is here](documentation/excess_benefit_documentation.csv).
 
 
 
-## What data is being released
 
-There are two types of data being released: salary and employment data, and disclosures about insider compensation. 
+## Where did this come from?
 
-## Where can I read more about the data
+The data is released by IRS to a public amazon bucket. This data is extracted using a python library called [IRSx](https://github.com/jsfenfen/990-xml-reader) I wrote a few years ago and dumped into a [database](https://github.com/jsfenfen/990-xml-database). 
+
+The naming convention is often consistent with the [IRSx names](http://www.irsx.info/), but have been altered to prevent confusion when two parties are present. The queries used to extract the data, which contain name transforms, are posted here. 
 
 
+
+
+## What are some common pitfalls?
+
+This data represents all filings, not just the most recent ones. If multiple filings representing the same tax year are found, the one with the last signature date is probably the one to use.
 
 
 ## How recent is the data?
 
-This release should include all electronic tax filings released by Jan. 29, 2020. Tax filings using "schemas" from 2013 and earlier are not included. 
+This release should include all electronic tax filings released by Jan. 29, 2020. Tax filings using "schemas" from 2013 and earlier are not included, so all of the filings are later than TY 2014. There is a significant delay from tax filing to release. By the end of 2019, most tax year 2018 filings have been released, but many orgs are given extensions. 
 
 ## What data is missing?
 
@@ -42,9 +49,11 @@ A new law signed in 2020 requires all nonprofits to file their returns electroni
 
 Estimates vary, but probably at least 80 % of organizations file electronically (the figure is over 95% when computed by assets). Private foundations have the lowest rate of electronic filing at about 50% or organizations.
 
+## How can I tell who has filed electronically? 
 
 
 
-## Why won't the IRS say who is a nonprofit and who isn't, how can state regulators do their job if they can't even get a list of the organizations they are supposed to regulate?
 
-That's a rhetorical question, right? 
+## Where can I get a listing of all nonprofits
+
+It does not exist. You can find a mostly complete listing of approved nonprofits in the IRS exempt organizations master file, but that listing may not include recent organizations that have yet to file a tax return, filers who have been automatically removed fof failing to file taxes for three years, or any organization that decides to operate as a nonprofit without seeking nonprofit status, as allowed by federal law.

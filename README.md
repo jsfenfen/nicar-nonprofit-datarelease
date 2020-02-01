@@ -12,18 +12,18 @@ This information is not freely available elsewhere, although employees are searc
 
 All of these files except for employees.csv comes from Schedule L. The best place to get started is with  [a blank copy of Schedule L](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990sl.pdf) and the [IRS' instructions on how to fill it in](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/schedule_instructions/i990sl.pdf) for more information on who needs to be included. See more about the employees file below. 
 
- - [Employees.csv.gz](http://www.jacobfenton.com/990data/NICAR20/employees.csv.gz) is a 400MB gzipped file of best paid employees and directors disclosed on forms 990, 990PF and 990EZ. About 20 million rows. Documentation [is here](documentation/employees_documentation.csv). 
+ - [Employees.csv.gz](http://www.jacobfenton.com/990data/NICAR20/employees.csv.gz) is a 400MB gzipped file of best paid employees and directors disclosed on forms 990, 990PF and 990EZ. About 20 million rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/employees_documentation.csv). 
 
  
-- [Loans_from.csv](http://www.jacobfenton.com/990data/NICAR20/loans_from.csv) Is a file of loans from nonprofits to insiders. Many states prohibit loans to directors, although there are some caveats. From Schedule L "Part II Loans to and/or From Interested Persons". About ~45,000 rows. Documentation [is here](documentation/loans_from_documentation.csv).
+- [Loans_from.csv](http://www.jacobfenton.com/990data/NICAR20/loans_from.csv) Is a file of loans from nonprofits to insiders. Many states prohibit loans to directors, although there are some caveats. From Schedule L "Part II Loans to and/or From Interested Persons". About ~45,000 rows. Documentation [is here]http://www.jacobfenton.com/990data/NICAR20/loans_from_documentation.csv).
  
-- [Loans_to.csv](http://www.jacobfenton.com/990data/NICAR20/loans_to.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or From Interested Persons". About 61,000 rows. Documentation [is here](documentation/loans_to_documentation.csv).
+- [Loans_to.csv](http://www.jacobfenton.com/990data/NICAR20/loans_to.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or From Interested Persons". About 61,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/loans_to_documentation.csv).
 
-- [Insider_assistance.csv](http://www.jacobfenton.com/990data/NICAR20/insider_assistance.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or from Interested Persons". About 11,000 rows. Documentation [is here](documentation/insider_assistance_documentation.csv).
+- [Insider_assistance.csv](http://www.jacobfenton.com/990data/NICAR20/insider_assistance.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or from Interested Persons". About 11,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_assistance_documentation.csv).
 
-- [Insider_transactions.csv](http://www.jacobfenton.com/990data/NICAR20/insider_transactions.csv) Is a file of "grants or assistance benefitting interested persons" from Schedule L, Part III. About 178,000 rows. Documentation [is here](documentation/insider_transactions_documentation.csv).
+- [Insider_transactions.csv](http://www.jacobfenton.com/990data/NICAR20/insider_transactions.csv) Is a file of "grants or assistance benefitting interested persons" from Schedule L, Part III. About 178,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_transactions_documentation.csv).
 
-- [Excess_benefits.csv](http://www.jacobfenton.com/990data/NICAR20/excess_benefits.csv) Is a file of "excess benefit transactions" with insiders, from Schedule L, Part I. Very rarely used, total of about 450 rows. Documentation [is here](documentation/excess_benefit_documentation.csv).
+- [Excess_benefits.csv](http://www.jacobfenton.com/990data/NICAR20/excess_benefits.csv) Is a file of "excess benefit transactions" with insiders, from Schedule L, Part I. Very rarely used, total of about 450 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/excess_benefit_documentation.csv).
 
 ## How can I run SQL queries against these dbs?
 

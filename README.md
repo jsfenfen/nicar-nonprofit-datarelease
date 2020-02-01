@@ -100,5 +100,30 @@ Each dataset above includes a link to documentation with the column names used.
 
 ## Where can I get a listing of all nonprofits
 
-It does not exist. You can find a mostly complete listing of approved nonprofits in the IRS exempt organizations master file, but that listing may not include recent organizations that have yet to file a tax return, filers who have been automatically removed fof failing to file taxes for three years, or any organization that decides to operate as a nonprofit without seeking nonprofit status, as allowed by federal law.
+It does not exist. You can find a mostly complete listing of approved nonprofits in the IRS [exempt organizations master file, EO-BMF](https://www.irs.gov/charities-non-profits/exempt-organizations-business-master-file-extract-eo-bmf), but that listing may not include recent organizations that have yet to file a tax return, filers who have been automatically removed fof failing to file taxes for three years, or any organization that decides to operate as a nonprofit without seeking nonprofit status, as allowed by federal law.
 
+NCCS has helpfully posted an archive of older EO-BMF files [here](https://nccs-data.urban.org/data.php?ds=bmf).
+
+Also see the IRS [select check](https://www.irs.gov/charities-non-profits/tax-exempt-organization-search).
+
+## Who is behind this project? 
+
+The data dumping scripts used to extract this data come from the Investigative Reporting Workshop's Public Accountability datasearch (where many of these datasets are searchable). Work on this data is inspired by BigLocalNews' launch and the potential it offers to bring complex national datasets and tooling to local newsrooms, like the ones I used to work in. 
+
+Many folks have helped with this project, but Jacob Fenton is primarily to blame. I worked at The Sunlight Foundation during the 2014 election, building datasets that we released to the public and used to cover dark money and political spending. Around that time Sunlight gave a minigrant to fund Luke Rosiak's ground-breaking project scanning form 990's (it now operates as [citizenaudit](https://www.citizenaudit.org/). 
+
+I got interested in questions of programmatic data extraction for 990 data and other datasets and did a John S. Knight Fellowship at Stanford in 2015/16 where I took ML classes and looked at techniques for structured data extraction (during which it became clear the big tech players were gonna be coming out with their own systems for this, like [texttract](https://aws.amazon.com/textract/)). In 2016, however, IRS began releasing the data behind the 990's as xml in a [public bucket](https://docs.opendata.aws/irs-990/readme.html), which made this data dramatically more usable. 
+
+In 2016 I worked with the Chronicle of Philanthropy to develop a system to programattically parse this data. That system was proprietary, so in 2017 I worked with ProPublica on an [open source library](https://github.com/jsfenfen/990-xml-reader) (originally built to populate their name search) that standardized these filings. 
+
+Although this data is now searchable, I don't think it's been particularly well utilized overall, so we're releasing all of it. 
+
+## How was this data tested?
+
+The accuracy of extracted data was tested against raw paper filings hand entered by volunteers during the [Aspen Institute's 2018 Validatathon](https://www.aspeninstitute.org/blog-posts/aspen-hosts-990-vali-datathon-part-philanthropys-data-revolution/). There's no guarantee it's totally accurate but it is pretty faithful to the original filings. 
+
+Please note that the filings contain a myriad of errors. Among the most common is placing an employee's name in the title field. This data is a mechanical extract of the filings *as filed* so nothing has been done to fix these errors. When in doubt, please refer to the [original source xml](https://docs.opendata.aws/irs-990/readme.html). 
+
+## What other resources have you put up about this
+
+See the [main IRSx repo](https://github.com/jsfenfen/990-xml-reader), a [django-flavored postgres ETL thing](https://github.com/jsfenfen/990-xml-database) with much spottier documentation and a reference on the crazy [naming convention used](http://www.irsx.info/), although some of those names have been altered in this release.

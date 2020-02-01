@@ -29,9 +29,13 @@ All of these files except for employees.csv comes from Schedule L. The best plac
 
 All of the Schedule L tables [are available to query here via datasette](http://datasette.publicaccountability.org/), click on the table name to run queries. The employees file is a big too big for datasette to serve, so you'll have to load it into your own rig. 
 
+You can [read more about datasette here](https://datasette.readthedocs.io/en/stable/), it's super exciting technology that lets you query a live database in a safe-ish way. (The database may still do down under load because of poor technical choices we've made)
+
 We're not quite sure how well this will work under load, we're making these dbs available as datasettes during NICAR though they may be password protected later to save our servers. 
 
 ED NOTE: THE SPECIFICS OF THIS AREN'T NAILED DOWN, WE PROBABLY WILL MOVE THE DATASETTES TO CLOUDRUN DURING NICAR. THE ADVANTAGE OF THEM BEING ON OUR SERVERS IS THAT WE CAN USE OUR PASSWORDS WITH THEM (ONCE I SET IT UP ANYWAYS).
+
+You can download a gzipped sqlite file of the [employees database here](http://www.jacobfenton.com/990data/NICAR20/empoyees.db.gz) (~640MB).
 
 
 ## How can I easily read a raw filing if I just know the EIN and object_id? 
@@ -41,6 +45,8 @@ Each of the files contains an EIN, which identifies an organization, and an obje
 https://projects.propublica.org/nonprofits/organizations/[EIN]/[object_id]/full
 
 Occasionally a very new filing will not be on their site, but most are.
+
+EDITORS NOTE: SHOULD CREATE A GUERILLA EIN / OBJECT_ID FORM AGAINST THEIR SITE, THEY'LL LOVE THAT... 
 
 ## Why should I care?
 
@@ -63,7 +69,12 @@ Estimates vary, but probably at least 80 % of organizations file electronically 
 
 ## How can I tell who has filed electronically?
 
-TKTK 
+It can be hard to tell which organizations have filed their returns eletronically, so we made an extract "address table" that includes contacts information and street address used. You should be able to figure out the ein and object id of a specific tax filing by querying that table via the [datasette](http://datasette.publicaccountability.org/address_table) we've posted. 
+
+[ED NOTE: DATASETTE LINKS MAY CHANGE]
+
+Datasette let's you URL encode a sql query, for instance [this query](http://datasette.publicaccountability.org/address_table?sql=select+rowid%2C+ein%2C+object_id%2C+RtrnHdr_TxPrdEndDt%2C+RtrnHdr_TxYr%2C+BsnssNm_BsnssNmLn1Txt%2C+BsnssNm_BsnssNmLn2Txt%2C+BsnssOffcr_PrsnNm%2C+BsnssOffcr_PrsnTtlTxt%2C+BsnssOffcr_PhnNm%2C+BsnssOffcr_EmlAddrssTxt%2C+BsnssOffcr_SgntrDt%2C+USAddrss_AddrssLn1Txt%2C+USAddrss_AddrssLn2Txt%2C+USAddrss_CtyNm%2C+USAddrss_SttAbbrvtnCd%2C+USAddrss_ZIPCd%2C+FrgnAddrss_AddrssLn1Txt%2C+FrgnAddrss_AddrssLn2Txt%2C+FrgnAddrss_CtyNm%2C+FrgnAddrss_PrvncOrSttNm%2C+FrgnAddrss_CntryCd+from+address_table+where+USAddrss_ZIPCd+like+%22972%25%22+order+by+rowid+limit+101) is the first hundred tax returns in zip codes starting with "971".
+
 
 ## What specific sections of the 990 does the employees file use?  
 

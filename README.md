@@ -10,7 +10,7 @@ This information is not freely available elsewhere, although employees are searc
 
 ## What data is available?
 
-All of these files except for employees.csv comes from Schedule L. See  [a blank form](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990sl.pdf) and the [IRS' filing instructions](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/schedule_instructions/i990sl.pdf) for more information on who needs to be included. See more about the employees file below. 
+All of these files except for employees.csv comes from Schedule L. The best place to get started is with  [a blank copy of Schedule L](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990sl.pdf) and the [IRS' instructions on how to fill it in](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/schedule_instructions/i990sl.pdf) for more information on who needs to be included. See more about the employees file below. 
 
  - [Employees.csv.gz](http://www.jacobfenton.com/990data/NICAR20/employees.csv.gz) is a 400MB gzipped file of best paid employees and directors disclosed on forms 990, 990PF and 990EZ. About 20 million rows. Documentation [is here](documentation/employees_documentation.csv). 
 
@@ -67,8 +67,13 @@ TKTK
 
 ## What specific sections of the 990 does the employees file use?  
 
-TKTK
+The queries used to create these files are listed in [the queries file](documentation/queries.md) and it's possible if impractical to follow the variable name transformations applied.
 
+The employees listed in this file are those disclosed in forms 990, 990PF and 990EZ. Additional information about a subset of these employees is available in schedule J, but these fields were chosen because they provide the broadest listing of directors and best-paid employees. 
+
+- On form 990, the salaries come from Part VII Section A; see IRSX documentation for this part [here](http://www.irsx.info/metadata/groups/Frm990PrtVIISctnA.html), or find it on the [blank 990](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990.pdf).
+- On form 990PF, the salaries come come from 990PF's part VIII table of Officer Directors KeyEmployees; see IRSX documentation for this part [here](http://www.irsx.info/metadata/groups/PFOffcrDrTrstKyEmpl.html), or find it on the [blank 990PF](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990pf.pdf). 
+- On form 990EZ, the salaries come come from 990EZ's part IV table of Officers, directors, trustees and key employees; see IRSX documentation for this part [here](http://www.irsx.info/metadata/groups/PFOffcrDrTrstKyEmpl.html), or find it on the [blank 990EZ](https://github.com/jsfenfen/990-xml-reader/blob/master/irs_reader/sample_schedules/f990ez.pdf).
 
 ## Where did this come from?
 

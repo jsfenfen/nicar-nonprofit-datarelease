@@ -108,7 +108,7 @@ Also see the IRS [select check](https://www.irs.gov/charities-non-profits/tax-ex
 
 ## Who is behind this project? 
 
-The data dumping scripts used to extract this data come from the Investigative Reporting Workshop's Public Accountability datasearch (where many of these datasets are searchable). Work on this data is inspired by BigLocalNews' launch and the potential it offers to bring complex national datasets and tooling to local newsrooms, like the ones I used to work in. 
+The data dumping scripts used to extract this data come from the Investigative Reporting Workshop's [Public Accountability](https://publicaccountability.org/) search (where [many](https://publicaccountability.org/datasets/home/#collection3) of these datasets are searchable). Work on this data is inspired by BigLocalNews' launch and the potential it offers to bring complex national datasets and tooling to local newsrooms, like the ones I used to work in. 
 
 Many folks have helped with this project, but Jacob Fenton is primarily to blame. I worked at The Sunlight Foundation during the 2014 election, building datasets that we released to the public and used to cover dark money and political spending. Around that time Sunlight gave a minigrant to fund Luke Rosiak's ground-breaking project scanning form 990's (it now operates as [citizenaudit](https://www.citizenaudit.org/). 
 
@@ -124,6 +124,6 @@ The accuracy of extracted data was tested against raw paper filings hand entered
 
 Please note that the filings contain a myriad of errors. Among the most common is placing an employee's name in the title field. This data is a mechanical extract of the filings *as filed* so nothing has been done to fix these errors. When in doubt, please refer to the [original source xml](https://docs.opendata.aws/irs-990/readme.html). 
 
-## What other resources have you put up about this
+## What other resources have you put up about this?
 
 See the [main IRSx repo](https://github.com/jsfenfen/990-xml-reader), a [django-flavored postgres ETL thing](https://github.com/jsfenfen/990-xml-database) with much spottier documentation and a reference on the crazy [naming convention used](http://www.irsx.info/), although some of those names have been altered in this release.

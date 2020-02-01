@@ -25,11 +25,20 @@ All of these files except for employees.csv comes from Schedule L. See  [a blank
 
 - [Excess_benefits.csv](http://www.jacobfenton.com/990data/NICAR20/excess_benefits.csv) Is a file of "excess benefit transactions" with insiders, from Schedule L, Part I. Very rarely used, total of about 450 rows. Documentation [is here](documentation/excess_benefit_documentation.csv).
 
+## How can I run SQL queries against these dbs?
+
+All of the Schedule L tables [are available to query here via datasette](http://datasette.publicaccountability.org/), click on the table name to run queries. The employees file is a big too big for datasette to serve, so you'll have to load it into your own rig. 
+
+We're not quite sure how well this will work under load, we're making these dbs available as datasettes during NICAR though they may be password protected later to save our servers. 
+
+ED NOTE: THE SPECIFICS OF THIS AREN'T NAILED DOWN, WE PROBABLY WILL MOVE THE DATASETTES TO CLOUDRUN DURING NICAR. THE ADVANTAGE OF THEM BEING ON OUR SERVERS IS THAT WE CAN USE OUR PASSWORDS WITH THEM (ONCE I SET IT UP ANYWAYS).
+
+
 ## How can I easily read a raw filing if I just know the EIN and object_id? 
 
 Each of the files contains an EIN, which identifies an organization, and an object_id, which identifies a particular filing. You can find that filing on propublica's nonprofit explorer using the following url pattern:
 
-`https://projects.propublica.org/nonprofits/organizations/[EIN]/[object_id]/full
+https://projects.propublica.org/nonprofits/organizations/[EIN]/[object_id]/full
 
 Occasionally a very new filing will not be on their site, but most are.
 

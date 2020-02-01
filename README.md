@@ -1,4 +1,4 @@
-# Documentation for nonprofit data release at NICAR 20 - New Orleans
+# Nonprofit ethics and salary data documentation
 
 
 ## What is this? 
@@ -6,6 +6,8 @@
 This is a reference repository for data extracted from nonprofits' electronically filed tax returns, which are public. It contains documentation and reference materials as well as the contents of about 2.2 million returns in data files detailed below.
 
 This information is not freely available elsewhere, although employees are searchable at American University's [Public Accountability](https://www.publicaccountability.org/dataset-search/) search and ProPublica's [Nonprofit Explorer](https://projects.propublica.org/nonprofits/advanced_search).  
+
+This data is being prepared for a release to coincide with the 2020 NICAR conference in New Orleans. 
 
 
 ## What data is available?

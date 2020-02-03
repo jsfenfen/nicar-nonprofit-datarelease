@@ -21,9 +21,9 @@ All of these files except for employees.csv comes from Schedule L. The best plac
  
 - [Loans_to.csv](http://www.jacobfenton.com/990data/NICAR20/loans_to.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or From Interested Persons". About 61,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/loans_to_documentation.csv).
 
-- [Insider_assistance.csv](http://www.jacobfenton.com/990data/NICAR20/insider_assistance.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or from Interested Persons". About 11,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_assistance_documentation.csv).
+- [Insider_assistance.csv](http://www.jacobfenton.com/990data/NICAR20/insider_assistance.csv) Is a file of grants or assistance benefiting insiders. From Schedule L Part III. About 11,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_assistance_documentation.csv).
 
-- [Insider_transactions.csv](http://www.jacobfenton.com/990data/NICAR20/insider_transactions.csv) Is a file of "grants or assistance benefitting interested persons" from Schedule L, Part III. About 178,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_transactions_documentation.csv).
+- [Insider_transactions.csv](http://www.jacobfenton.com/990data/NICAR20/insider_transactions.csv) Is a file of "business transactions benefitting interested persons" from Schedule L, Part IV. About 178,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/insider_transactions_documentation.csv).
 
 - [Excess_benefits.csv](http://www.jacobfenton.com/990data/NICAR20/excess_benefits.csv) Is a file of "excess benefit transactions" with insiders, from Schedule L, Part I. Very rarely used, total of about 450 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/excess_benefit_documentation.csv).
 
@@ -114,7 +114,7 @@ Many folks have helped with this project, but Jacob Fenton is primarily to blame
 
 I got interested in questions of programmatic data extraction for 990 data and other datasets and did a John S. Knight Fellowship at Stanford in 2015/16 where I took ML classes and looked at techniques for structured data extraction (during which it became clear the big tech players were gonna be coming out with their own systems for this, like [texttract](https://aws.amazon.com/textract/)). In 2016, however, IRS began releasing the data behind the 990's as xml in a [public bucket](https://docs.opendata.aws/irs-990/readme.html), which made this data dramatically more usable. 
 
-In 2016 I worked with the Chronicle of Philanthropy to develop a system to programattically parse this data. That system was proprietary, so in 2017 I worked with ProPublica on an [open source library](https://github.com/jsfenfen/990-xml-reader) (originally built to populate their name search) that standardized these filings. 
+In 2016 I worked with the Chronicle of Philanthropy to develop a system to programattically parse this data. That system was proprietary, so in 2017 I worked with ProPublica on an [open source library](https://github.com/jsfenfen/990-xml-reader) (originally [built to populate](https://www.propublica.org/nerds/new-in-nonprofit-explorer-people-search) their name search) that standardized these filings. 
 
 Although this data is now searchable, I don't think it's been particularly well utilized overall, so we're releasing all of it. 
 

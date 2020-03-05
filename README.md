@@ -17,7 +17,7 @@ All of these files except for employees.csv comes from Schedule L. The best plac
  - [Employees.csv.gz](http://www.jacobfenton.com/990data/NICAR20/employees.csv.gz) is a 400MB gzipped file of best paid employees and directors disclosed on forms 990, 990PF and 990EZ. About 20 million rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/employees_documentation.csv). 
 
  
-- [Loans_from.csv](http://www.jacobfenton.com/990data/NICAR20/loans_from.csv) Is a file of loans from nonprofits to insiders. Many states prohibit loans to directors, although there are some caveats. From Schedule L "Part II Loans to and/or From Interested Persons". About ~45,000 rows. Documentation [is here]http://www.jacobfenton.com/990data/NICAR20/loans_from_documentation.csv).
+- [Loans_from.csv](http://www.jacobfenton.com/990data/NICAR20/loans_from.csv) Is a file of loans from nonprofits to insiders. Many states prohibit loans to directors, although there are some caveats. From Schedule L "Part II Loans to and/or From Interested Persons". About ~45,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/loans_from_documentation.csv).
  
 - [Loans_to.csv](http://www.jacobfenton.com/990data/NICAR20/loans_to.csv) Is a file of loans to nonprofit organizations from insiders. From Schedule L "Part II Loans to and/or From Interested Persons". About 61,000 rows. Documentation [is here](http://www.jacobfenton.com/990data/NICAR20/loans_to_documentation.csv).
 
@@ -29,15 +29,10 @@ All of these files except for employees.csv comes from Schedule L. The best plac
 
 ## How can I run SQL queries against these dbs?
 
-All of the Schedule L tables [are available to query here via datasette](http://datasette.publicaccountability.org/), click on the table name to run queries. The employees file is a big too big for datasette to serve, so you'll have to load it into your own rig. 
+You can directly download sqlite databases containing these files. All of the employees data is [available here as a gzipped sqlite file](http://www.jacobfenton.com/990data/NICAR20/employees.db.gz). You can also download the schedule L tables as  [as a gzipped sqlite file](http://www.jacobfenton.com/990data/NICAR20/ethics.db.gz). 
 
-You can [read more about datasette here](https://datasette.readthedocs.io/en/stable/), it's super exciting technology that lets you query a live database in a safe-ish way. (The database may still do down under load because of poor technical choices we've made)
+While SQLITE has a perfectly good CLI, we're also big fans of datasette-- [read more about it here](https://datasette.readthedocs.io/en/stable/), it's super exciting technology that lets you query a live database in a safe-ish way. 
 
-We're not quite sure how well this will work under load, we're making these dbs available as datasettes during NICAR though they may be password protected later to save our servers. 
-
-ED NOTE: THE SPECIFICS OF THIS AREN'T NAILED DOWN, WE PROBABLY WILL MOVE THE DATASETTES TO CLOUDRUN DURING NICAR. THE ADVANTAGE OF THEM BEING ON OUR SERVERS IS THAT WE CAN USE OUR PASSWORDS WITH THEM (ONCE I SET IT UP ANYWAYS).
-
-You can download a gzipped sqlite file of the [employees database here](http://www.jacobfenton.com/990data/NICAR20/empoyees.db.gz) (~640MB).
 
 
 ## How can I easily read a raw filing if I just know the EIN and object_id? 
@@ -48,7 +43,6 @@ https://projects.propublica.org/nonprofits/organizations/[EIN]/[object_id]/full
 
 Occasionally a very new filing will not be on their site, but most are.
 
-EDITORS NOTE: SHOULD CREATE A GUERILLA EIN / OBJECT_ID FORM AGAINST THEIR SITE, THEY'LL LOVE THAT... 
 
 ## Why should I care?
 
@@ -71,9 +65,10 @@ Estimates vary, but probably at least 80 % of organizations file electronically 
 
 ## How can I tell who has filed electronically?
 
+[ Editors note: these should be available during NICAR, they may be moved later ] 
+
 It can be hard to tell which organizations have filed their returns eletronically, so we made an extract "address table" that includes contacts information and street address used. You should be able to figure out the ein and object id of a specific tax filing by querying that table via the [datasette](http://datasette.publicaccountability.org/address_table) we've posted. 
 
-[ED NOTE: DATASETTE LINKS MAY CHANGE]
 
 Datasette let's you URL encode a sql query, for instance [this query](http://datasette.publicaccountability.org/address_table?sql=select+rowid%2C+ein%2C+object_id%2C+RtrnHdr_TxPrdEndDt%2C+RtrnHdr_TxYr%2C+BsnssNm_BsnssNmLn1Txt%2C+BsnssNm_BsnssNmLn2Txt%2C+BsnssOffcr_PrsnNm%2C+BsnssOffcr_PrsnTtlTxt%2C+BsnssOffcr_PhnNm%2C+BsnssOffcr_EmlAddrssTxt%2C+BsnssOffcr_SgntrDt%2C+USAddrss_AddrssLn1Txt%2C+USAddrss_AddrssLn2Txt%2C+USAddrss_CtyNm%2C+USAddrss_SttAbbrvtnCd%2C+USAddrss_ZIPCd%2C+FrgnAddrss_AddrssLn1Txt%2C+FrgnAddrss_AddrssLn2Txt%2C+FrgnAddrss_CtyNm%2C+FrgnAddrss_PrvncOrSttNm%2C+FrgnAddrss_CntryCd+from+address_table+where+USAddrss_ZIPCd+like+%22972%25%22+order+by+rowid+limit+101) is the first hundred tax returns in zip codes starting with "971".
 
